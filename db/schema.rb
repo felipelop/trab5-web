@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170612031350) do
+ActiveRecord::Schema.define(version: 20170612225818) do
 
   create_table "pokedexes", force: true do |t|
     t.integer  "numero"
@@ -33,15 +33,15 @@ ActiveRecord::Schema.define(version: 20170612031350) do
 
   add_index "pokemons", ["treinador_id"], name: "index_pokemons_on_treinador_id"
 
-  create_table "tipo_pokemons", force: true do |t|
+  create_table "pokemons_tipos", force: true do |t|
     t.integer  "tipo_id"
     t.integer  "pokemon_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "tipo_pokemons", ["pokemon_id"], name: "index_tipo_pokemons_on_pokemon_id"
-  add_index "tipo_pokemons", ["tipo_id"], name: "index_tipo_pokemons_on_tipo_id"
+  add_index "pokemons_tipos", ["pokemon_id"], name: "index_tipo_pokemons_on_pokemon_id"
+  add_index "pokemons_tipos", ["tipo_id"], name: "index_tipo_pokemons_on_tipo_id"
 
   create_table "tipos", force: true do |t|
     t.string   "nome"
@@ -56,6 +56,14 @@ ActiveRecord::Schema.define(version: 20170612031350) do
     t.integer  "insignias"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "users", force: true do |t|
+    t.string   "login"
+    t.string   "role"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "password_digest"
   end
 
 end
