@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Tipo:</strong>
+  <%= @tipo_pokemon.tipo %>
+</p>
+
+<p>
+  <strong>Pokemon:</strong>
+  <%= @tipo_pokemon.pokemon %>
+</p>
+
+<%= link_to 'Edit', edit_tipo_pokemon_path(@tipo_pokemon) %> |
+<%= link_to 'Back', tipo_pokemons_path %>

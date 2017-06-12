@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @treinador.nome %>
+</p>
+
+<p>
+  <strong>Regiao:</strong>
+  <%= @treinador.regiao %>
+</p>
+
+<p>
+  <strong>Pokebolas:</strong>
+  <%= @treinador.pokebolas %>
+</p>
+
+<p>
+  <strong>Insignias:</strong>
+  <%= @treinador.insignias %>
+</p>
+
+<%= link_to 'Edit', edit_treinador_path(@treinador) %> |
+<%= link_to 'Back', treinadors_path %>

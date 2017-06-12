@@ -1,0 +1,31 @@
+<h1>Listing treinadors</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Regiao</th>
+      <th>Pokebolas</th>
+      <th>Insignias</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @treinadors.each do |treinador| %>
+      <tr>
+        <td><%= treinador.nome %></td>
+        <td><%= treinador.regiao %></td>
+        <td><%= treinador.pokebolas %></td>
+        <td><%= treinador.insignias %></td>
+        <td><%= link_to 'Show', treinador %></td>
+        <td><%= link_to 'Edit', edit_treinador_path(treinador) %></td>
+        <td><%= link_to 'Destroy', treinador, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Treinador', new_treinador_path %>

@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @pokemon.nome %>
+</p>
+
+<p>
+  <strong>Cp:</strong>
+  <%= @pokemon.cp %>
+</p>
+
+<p>
+  <strong>Hp:</strong>
+  <%= @pokemon.hp %>
+</p>
+
+<p>
+  <strong>Treinador:</strong>
+  <%= @pokemon.treinador %>
+</p>
+
+<%= link_to 'Edit', edit_pokemon_path(@pokemon) %> |
+<%= link_to 'Back', pokemons_path %>
