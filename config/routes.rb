@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   get 'users/new'
 
+  resources :users	
+
   resources :tipo_pokemons
 
   resources :tipos
