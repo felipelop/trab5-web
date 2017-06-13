@@ -20,5 +20,7 @@
   <%= @treinador.insignias %>
 </p>
 
-<%= link_to 'Edit', edit_treinador_path(@treinador) %> |
+<% if current_user.role == "admin" %>
+	<%= link_to 'Edit', edit_treinador_path(@treinador) %> |
+<% end %>
 <%= link_to 'Back', treinadors_path %>

@@ -15,13 +15,16 @@
         <td><%= tipo_pokemon.tipo %></td>
         <td><%= tipo_pokemon.pokemon %></td>
         <td><%= link_to 'Show', tipo_pokemon %></td>
-        <td><%= link_to 'Edit', edit_tipo_pokemon_path(tipo_pokemon) %></td>
-        <td><%= link_to 'Destroy', tipo_pokemon, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+	<% if current_user.role == "admin" %>
+        	<td><%= link_to 'Edit', edit_tipo_pokemon_path(tipo_pokemon) %></td>
+        	<td><%= link_to 'Destroy', tipo_pokemon, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+	<% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Tipo pokemon', new_tipo_pokemon_path %>
+<% if current_user.role == "admin" %>
+	<%= link_to 'New Tipo pokemon', new_tipo_pokemon_path %>
+<% end %>

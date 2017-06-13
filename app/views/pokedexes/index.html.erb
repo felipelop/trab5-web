@@ -15,13 +15,16 @@
         <td><%= pokedex.numero %></td>
         <td><%= pokedex.pokemon %></td>
         <td><%= link_to 'Show', pokedex %></td>
-        <td><%= link_to 'Edit', edit_pokedex_path(pokedex) %></td>
-        <td><%= link_to 'Destroy', pokedex, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+	<% if current_user.role == "admin" %>
+	        <td><%= link_to 'Edit', edit_pokedex_path(pokedex) %></td>
+       		<td><%= link_to 'Destroy', pokedex, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+	<% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Pokedex', new_pokedex_path %>
+<% if current_user.role == "admin" %>
+	<%= link_to 'New Pokedex', new_pokedex_path %>
+<% end %>

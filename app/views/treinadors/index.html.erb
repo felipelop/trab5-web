@@ -19,13 +19,16 @@
         <td><%= treinador.pokebolas %></td>
         <td><%= treinador.insignias %></td>
         <td><%= link_to 'Show', treinador %></td>
-        <td><%= link_to 'Edit', edit_treinador_path(treinador) %></td>
-        <td><%= link_to 'Destroy', treinador, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+	<% if current_user.role == "admin" %>
+	        <td><%= link_to 'Edit', edit_treinador_path(treinador) %></td>
+       		<td><%= link_to 'Destroy', treinador, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+	<% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Treinador', new_treinador_path %>
+<% if current_user.role == "admin" %>
+	<%= link_to 'New Treinador', new_treinador_path %>
+<% end %>

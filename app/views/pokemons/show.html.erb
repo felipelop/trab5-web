@@ -20,5 +20,7 @@
   <%= @pokemon.treinador %>
 </p>
 
-<%= link_to 'Edit', edit_pokemon_path(@pokemon) %> |
+<% if current_user.role == "admin" %>
+	<%= link_to 'Edit', edit_pokemon_path(@pokemon) %> |
+<% end %>
 <%= link_to 'Back', pokemons_path %>

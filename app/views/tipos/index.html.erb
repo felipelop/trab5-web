@@ -13,13 +13,16 @@
       <tr>
         <td><%= tipo.nome %></td>
         <td><%= link_to 'Show', tipo %></td>
-        <td><%= link_to 'Edit', edit_tipo_path(tipo) %></td>
-        <td><%= link_to 'Destroy', tipo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+	<% if current_user.role == "admin" %>
+        	<td><%= link_to 'Edit', edit_tipo_path(tipo) %></td>
+        	<td><%= link_to 'Destroy', tipo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+	<% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Tipo', new_tipo_path %>
+<% if current_user.role == "admin" %>
+	<%= link_to 'New Tipo', new_tipo_path %>
+<% end %>

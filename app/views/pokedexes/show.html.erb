@@ -10,5 +10,7 @@
   <%= @pokedex.pokemon %>
 </p>
 
-<%= link_to 'Edit', edit_pokedex_path(@pokedex) %> |
+<% if current_user.role == "admin" %>
+	<%= link_to 'Edit', edit_pokedex_path(@pokedex) %> |
+<% end %>
 <%= link_to 'Back', pokedexes_path %>
