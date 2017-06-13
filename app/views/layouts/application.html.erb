@@ -6,14 +6,8 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-	<header>
-		<div><%= link_to 'Pokemons', pokemons_path %></div>
-		<div><%= link_to 'Treinadors', treinadors_path %></div>
-		<div><%= link_to 'Tipos', tipos_path %></div>
-		<div><%= link_to 'Pokedexes', pokedexes_path %></div>
-		<div><%= link_to 'TipoPokemons', tipo_pokemons_path %></div>
-	</header>
+
+<%= render 'layouts/header' %>
 <%= yield %>
 
 </body>
