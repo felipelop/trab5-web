@@ -1,7 +1,6 @@
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
+ * listed below. *
  * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
  * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
  *
@@ -13,3 +12,39 @@
  *= require_tree .
  *= require_self
  */
+
+* {
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+}
+
+*, *:before, *:after {
+        box-sizing: border-box;
+}
+
+
+.page_header  {
+  background-color:#302E2E;
+  color: white;
+  margin-top: 0;
+  height: 50px;
+  width: 100%;
+}
+
+.aba {
+	font-size: 15px;
+	text-align: center;
+	background: #363535;
+	padding: 10px 0;
+	float: left;
+	width: 16%;
+	color: white;
+	margin-top: 5px;
+}
+
+.aba a:link, .aba a:visited, .aba a:hover {
+	text-decoration: none;
+	color: #ffffff;
+	background: #363535;
+}
