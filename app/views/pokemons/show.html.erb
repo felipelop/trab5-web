@@ -1,6 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>ID:</strong>
+  <%= @pokemon.id %>
+</p>
+
+<p>
   <strong>Nome:</strong>
   <%= @pokemon.nome %>
 </p>
@@ -17,7 +22,7 @@
 
 <p>
   <strong>Treinador:</strong>
-  <%= @pokemon.treinador %>
+  <%= Treinador.find(@pokemon.treinador_id).nome %>
 </p>
 
 <% if current_user.role == "admin" %>

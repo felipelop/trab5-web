@@ -12,8 +12,8 @@
   <tbody>
     <% @tipo_pokemons.each do |tipo_pokemon| %>
       <tr>
-        <td><%= tipo_pokemon.tipo %></td>
-        <td><%= tipo_pokemon.pokemon %></td>
+        <td><%= Tipo.find(tipo_pokemon.tipo_id).nome %></td>
+        <td><%= Pokemon.find(tipo_pokemon.pokemon_id).nome %></td>
         <td><%= link_to 'Show', tipo_pokemon %></td>
 	<% if current_user.role == "admin" %>
         	<td><%= link_to 'Edit', edit_tipo_pokemon_path(tipo_pokemon) %></td>

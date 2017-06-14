@@ -2,12 +2,12 @@
 
 <p>
   <strong>Tipo:</strong>
-  <%= @tipo_pokemon.tipo %>
+  <%= Tipo.find(@tipo_pokemon.tipo_id).nome %>
 </p>
 
 <p>
   <strong>Pokemon:</strong>
-  <%= @tipo_pokemon.pokemon %>
+  <%= Pokemon.find(@tipo_pokemon.pokemon_id).nome %>
 </p>
 
 <% if current_user.role == "admin" %>

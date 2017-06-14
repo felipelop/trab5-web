@@ -3,6 +3,7 @@
 <table>
   <thead>
     <tr>
+      <th>ID</th>
       <th>Nome</th>
       <th>Cp</th>
       <th>Hp</th>
@@ -14,10 +15,11 @@
   <tbody>
     <% @pokemons.each do |pokemon| %>
       <tr>
+        <td><%= pokemon.id %></td>
         <td><%= pokemon.nome %></td>
         <td><%= pokemon.cp %></td>
         <td><%= pokemon.hp %></td>
-        <td><%= pokemon.treinador %></td>
+        <td><%= Treinador.find(pokemon.treinador_id).nome %></td>
         <td><%= link_to 'Show', pokemon %></td>
 	<% if current_user.role == "admin" %>
 	        <td><%= link_to 'Edit', edit_pokemon_path(pokemon) %></td>

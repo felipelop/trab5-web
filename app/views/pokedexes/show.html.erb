@@ -1,13 +1,18 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>ID:</strong>
+  <%= @pokedex.id %>
+</p>
+
+<p>
   <strong>Numero:</strong>
   <%= @pokedex.numero %>
 </p>
 
 <p>
   <strong>Pokemon:</strong>
-  <%= @pokedex.pokemon %>
+  <%= Pokemon.find(@pokedex.pokemon_id).nome %>
 </p>
 
 <% if current_user.role == "admin" %>

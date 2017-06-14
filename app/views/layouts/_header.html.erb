@@ -1,21 +1,14 @@
-<header>
-    <div>
-      <nav>
-        <ul>
+<header class="page_header">
+	<nav>
           <% if logged_in? %>
-            <li><%= link_to "Users", users_path %></li>
-                <li>
-                  <%= link_to "Log out", sign_out_path, method: "delete" %>
-                </li>
-		<div><%= link_to 'Pokemons', pokemons_path %></div>
-		<div><%= link_to 'Treinadors', treinadors_path %></div>
-		<div><%= link_to 'Tipos', tipos_path %></div>
-		<div><%= link_to 'Pokedexes', pokedexes_path %></div>
-		<div><%= link_to 'TipoPokemons', tipo_pokemons_path %></div>
+		   <div class="aba"><%= link_to 'Pokemons', pokemons_path %></div>
+		   <div class="aba"><%= link_to 'Treinadores', treinadors_path %></div>
+		   <div class="aba"><%= link_to 'Tipos', tipos_path %></div>
+		   <div class="aba"><%= link_to 'Pokedexes', pokedexes_path %></div>
+		   <div class="aba"><%= link_to 'Tipo Pokemons', tipo_pokemons_path %></div>
+                   <div class="aba"><%= link_to "Log out", sign_out_path, method: "delete" %></div>
           <% else %>
-            <li><%= link_to "Log in", root_path %></li>
+            <div class="aba"><%= link_to "Log in", root_path %></div>
           <% end %>
-        </ul>
-      </nav>
-    </div>
+	</nav>
   </header>

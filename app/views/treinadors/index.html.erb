@@ -3,6 +3,7 @@
 <table>
   <thead>
     <tr>
+      <th>ID</th>
       <th>Nome</th>
       <th>Regiao</th>
       <th>Pokebolas</th>
@@ -14,6 +15,7 @@
   <tbody>
     <% @treinadors.each do |treinador| %>
       <tr>
+        <td><%= treinador.id %></td>
         <td><%= treinador.nome %></td>
         <td><%= treinador.regiao %></td>
         <td><%= treinador.pokebolas %></td>

@@ -1,8 +1,11 @@
+<section id="view">
+
 <h1>Listing pokedexes</h1>
 
 <table>
   <thead>
     <tr>
+      <th>ID</th>
       <th>Numero</th>
       <th>Pokemon</th>
       <th colspan="3"></th>
@@ -12,8 +15,9 @@
   <tbody>
     <% @pokedexes.each do |pokedex| %>
       <tr>
+        <td><%= pokedex.id %></td>
         <td><%= pokedex.numero %></td>
-        <td><%= pokedex.pokemon %></td>
+        <td><%= Pokemon.find(pokedex.pokemon).nome %></td>
         <td><%= link_to 'Show', pokedex %></td>
 	<% if current_user.role == "admin" %>
 	        <td><%= link_to 'Edit', edit_pokedex_path(pokedex) %></td>
@@ -28,3 +32,4 @@
 <% if current_user.role == "admin" %>
 	<%= link_to 'New Pokedex', new_pokedex_path %>
 <% end %>
+</section>
